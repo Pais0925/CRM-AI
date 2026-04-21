@@ -229,7 +229,7 @@ function TopBar({ placeholder = "Search OS..." }: { placeholder?: string }) {
                       <div style={{ fontSize: 14, fontWeight: 900 }}>{user?.email}</div>
                       <div style={{ fontSize: 11, color: C.primary, fontWeight: 800 }}>SUPER ADMIN</div>
                     </div>
-                    <button onClick={logOut} style={{ width: "100%", padding: "10px 12px", textAlign: "left", background: "none", border: "none", cursor: "pointer", borderRadius: 8, fontSize: 13, color: C.error, fontWeight: 700 }}>Logout</button>
+                    <button onClick={logout} style={{ width: "100%", padding: "10px 12px", textAlign: "left", background: "none", border: "none", cursor: "pointer", borderRadius: 8, fontSize: 13, color: C.error, fontWeight: 700 }}>Logout</button>
                   </div>
                 )}
               </div>
