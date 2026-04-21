@@ -1,0 +1,65 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Get a free hosted Postgres database in seconds: `npx create-db`
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model User {
+  id           String   @id @default(uuid())
+  email        String   @unique
+  passwordHash String
+  name         String?
+  role         Role     @default(OPERATOR)
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+}
+
+enum Role {
+  SUPER_ADMIN
+  ADMIN
+  OPERATOR
+  VIEWER
+}
+
+model Contact {
+  id          String    @id @default(uuid())
+  channel     String
+  externalId  String
+  name        String?
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+  messages    Message[]
+}
+
+model Message {
+  id          String   @id @default(uuid())
+  contactId   String
+  contact     Contact  @relation(fields: [contactId], references: [id])
+  role        String
+  content     String
+  isError     Boolean  @default(false)
+  createdAt   DateTime @default(now())
+}
+
+model Integration {
+  id            String   @id @default(uuid())
+  platform      String
+  status        String   @default("DISCONNECTED")
+  webhookSecret String
+}
+
+model Document {
+  id            String   @id @default(uuid())
+  filename      String
+  fileUrl       String
+  vectorStatus  String   @default("PENDING")
+  uploadedBy    String?
+  createdAt     DateTime @default(now())
+}

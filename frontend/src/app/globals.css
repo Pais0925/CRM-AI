@@ -1,0 +1,134 @@
+@import "tailwindcss";
+@source "../components";
+@source "../app";
+
+@custom-variant dark (&:is(.dark *));
+
+/* ── Material Design 3 Pastel Design System ────────────────────────────────── */
+@theme {
+  /* Colors */
+  --color-background: #f9f9f8;
+  --color-surface: #f9f9f8;
+  --color-surface-bright: #f9f9f8;
+  --color-surface-dim: #dadad9;
+  --color-surface-container-lowest: #ffffff;
+  --color-surface-container-low: #f4f4f2;
+  --color-surface-container: #eeeeed;
+  --color-surface-container-high: #e8e8e7;
+  --color-surface-container-highest: #e2e2e1;
+  --color-surface-variant: #e2e2e1;
+
+  --color-on-background: #1a1c1c;
+  --color-on-surface: #1a1c1c;
+  --color-on-surface-variant: #414847;
+  --color-inverse-surface: #2f3130;
+  --color-inverse-on-surface: #f1f1f0;
+
+  --color-outline: #717977;
+  --color-outline-variant: #c0c8c6;
+
+  --color-primary: #416562;
+  --color-on-primary: #ffffff;
+  --color-primary-container: #bae1dd;
+  --color-on-primary-container: #416562;
+  --color-primary-fixed: #c3eae6;
+  --color-primary-fixed-dim: #a7ceca;
+  --color-on-primary-fixed: #00201e;
+  --color-on-primary-fixed-variant: #284d4a;
+  --color-inverse-primary: #a7ceca;
+  --color-surface-tint: #416562;
+
+  --color-secondary: #65587a;
+  --color-on-secondary: #ffffff;
+  --color-secondary-container: #e7d6fe;
+  --color-on-secondary-container: #685b7d;
+  --color-secondary-fixed: #ecdcff;
+  --color-secondary-fixed-dim: #d0c0e7;
+  --color-on-secondary-fixed: #211633;
+  --color-on-secondary-fixed-variant: #4d4161;
+
+  --color-tertiary: #715950;
+  --color-on-tertiary: #ffffff;
+  --color-tertiary-container: #f2d3c7;
+  --color-on-tertiary-container: #715a50;
+  --color-tertiary-fixed: #fcdcd0;
+  --color-tertiary-fixed-dim: #dec0b5;
+  --color-on-tertiary-fixed: #281811;
+  --color-on-tertiary-fixed-variant: #574239;
+
+  --color-error: #ba1a1a;
+  --color-on-error: #ffffff;
+  --color-error-container: #ffdad6;
+  --color-on-error-container: #93000a;
+
+  /* Border Radius */
+  --radius-sm: 0.25rem;
+  --radius: 0.5rem;
+  --radius-lg: 0.75rem;
+  --radius-full: 9999px;
+
+  /* Spacing tokens */
+  --spacing-xs: 4px;
+  --spacing-sm: 12px;
+  --spacing-md: 24px;
+  --spacing-lg: 40px;
+  --spacing-xl: 64px;
+  --spacing-base: 8px;
+  --spacing-gutter: 24px;
+  --spacing-margin: 32px;
+
+  /* Typography */
+  --font-sans: "Lexend", sans-serif;
+  --font-lexend: "Lexend", sans-serif;
+
+  --text-display: 48px;
+  --text-h1: 32px;
+  --text-h2: 24px;
+  --text-h3: 20px;
+  --text-body-lg: 18px;
+  --text-body-md: 16px;
+  --text-body-sm: 14px;
+  --text-label-md: 12px;
+  --text-label-sm: 11px;
+
+  /* Shadows */
+  --shadow-pastel-primary: 0 8px 24px -4px rgba(65, 101, 98, 0.1);
+  --shadow-pastel-secondary: 0 8px 24px -4px rgba(101, 88, 122, 0.1);
+}
+
+@layer base {
+  * { box-sizing: border-box; }
+  body {
+    background-color: var(--color-background);
+    color: var(--color-on-surface);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+}
+
+/* Material Symbols */
+.material-symbols-outlined {
+  font-family: 'Material Symbols Outlined';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  direction: ltr;
+  -webkit-font-smoothing: antialiased;
+  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+}
+.material-symbols-outlined.fill {
+  font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+}
+
+@keyframes shimmer {
+  100% { transform: translateX(100%); }
+}
+@keyframes bounce-dot {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-4px); }
+}
